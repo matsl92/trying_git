@@ -1,0 +1,31 @@
+$ git clone https://github.com/libgit2/libgit2   clone adds remote called origin
+$ git clone https://github.com/lyibgit2/libgit2 name_you_want
+$ git status -s   one line per file. two columns: staging area, working directory (most recent)
+$ git diff   To see what you’ve changed but not yet staged
+$ git rm PROJECTS.md   removes file and stage it as deleted
+$ git rm --cached README    removes the file content from de index
+$ git reset -- <file>   use restore instead, unstages the file or takes it back to the head commit
+$ git reset HEAD CONTRIBUTING.md  use restore instead, this simply unstages apparently, from documentation
+$ git mv README.md README   renames file from README.md to README
+$ git log   lists all commits and has many options or arguments
+$ git commit --amend    be careful. this overwrites the last commit with whatever you added between them
+$ git checkout -- CONTRIBUTING.md   discards the last changes and takes it back to the last commits
+$ git restore --staged CONTRIBUTING.md   unstages
+$ git restore CONTRIBUTING.md   descards changes, takes it back to the last commit
+
+
+remote
+
+$ git remote   lists the shortnames of each remote handle
+$ git remote -v   shortnames and links
+$ git remote add <shortname> <url>   adds new remote
+$ git fetch pb    downloads all new info from remote shortnamed pb  does'n merge
+$ git pull    fetches and merges, main to main or whatever
+$ git push origin master   origin(remote), master(branch, local I think or maybe is both)
+$ git remote show origin    aditional info about the specified remote
+$ git remote rename pb paul   pb -> paul
+$ git remote remove paul   removes remote paul
+
+
+branching
+
