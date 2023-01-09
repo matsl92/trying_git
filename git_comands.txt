@@ -29,3 +29,11 @@ $ git remote remove paul   removes remote paul
 
 branching
 
+$ git branch testing   creates new pointer or branch but HEAD keeps pointing to the previous branch
+$ git log --all lists all the commits made in all branches
+$ git log --oneline --decorate --graph --all   shows commits likw a graph
+$ git switch -c new-branch   creates and switches to a new branch
+$ git merge hotfix   merges hotfix branch to your current branch
+$ git branch -d hotfix   deletes branch (after merging for instance)
+$ git status   shows the file that has conflicts to be merged
+$ git add    to both files to mark them as resolved
