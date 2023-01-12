@@ -33,7 +33,28 @@ $ git branch testing   creates new pointer or branch but HEAD keeps pointing to 
 $ git log --all lists all the commits made in all branches
 $ git log --oneline --decorate --graph --all   shows commits likw a graph
 $ git switch -c new-branch   creates and switches to a new branch
+$ git checkout -b my-branch   creates a new branch as switches to it
 $ git merge hotfix   merges hotfix branch to your current branch
 $ git branch -d hotfix   deletes branch (after merging for instance)
 $ git status   shows the file that has conflicts to be merged
 $ git add    to both files to mark them as resolved
+$ git branch --move bad-branch-name corrected-branch-name   changes a branch name locally
+$ git push --set-upstream origin corrected-branch-name  changes remote branch name
+$ git push origin --delete bad-branch-name   now it's fully replace
+$ git branch --move master main  renames local master to main, read more about it to change the remote as well
+
+
+remote branches
+
+$ git clone -o booyah    booyah/master would be the default remote branch intead of origin master after cloning
+$ git fetch origin   downloads and updates your database, moving your origin/master pointer or whatever its name is to its new position
+$ git push origin serverfix:serverfix   pushes your local branch serverfix to a new branch also called serverfix in your remote origin
+$ git push origin serverfix:awesomebranch   example with a different name, local:remote
+$ git checkout -b serverfix origin/serverfix   creates a new branch which starts from the remote origin/serverfix and switches to it
+$ git checkout -b sf origin/serverfix   same but using a different name
+$ git checkout --track origin/serverfix   creates new branch and sets it to track origin/serverfix  if the branch doesn't exists and there's only one origin/serverfix
+$ git checkout serverfix   switches to it
+$ git branch -u origin/serverfix sets the current branch to track origin/serverfix
+$ git branch -vv   lists local branches and what they are tracking
+$ git pull   looks for what server and branch your current branch is trancking, then fetches and merges
+$ git push origin --delete serverfix   deletes branch origin/serverfix
